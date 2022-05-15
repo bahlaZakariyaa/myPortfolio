@@ -19,7 +19,9 @@
 
 /* ------------------- General Styles ------------------- */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -30,10 +32,12 @@ body {
     background-color: var(--bg-color);
     font-family: 'Poppins', sans-serif;
 }
-::selection{
+
+::selection {
     background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
     color: #fff;
 }
+
 a {
     text-decoration: none;
 }
@@ -43,7 +47,8 @@ ul {
 }
 
 /* ------------------- Reusable CSS Code ------------------- */
-.container{
+
+.container {
     position: relative;
     width: 100%;
     max-width: 75rem;
@@ -51,7 +56,7 @@ ul {
     margin: 0 auto;
 }
 
-.logo{
+#logo {
     margin-right: 1.5rem;
     font-family: 'Abril Fatface', cursive;
     font-size: 1.5rem;
@@ -60,12 +65,13 @@ ul {
     transition: .3s;
 }
 
-.logo span{
+#logo span {
     color: var(--main-color-1);
 }
 
 /* ------------------- Navbar Styling ------------------- */
-header{
+
+/* header {
     position: fixed;
     top: 0;
     left: 0;
@@ -73,33 +79,55 @@ header{
     z-index: 10;
     transition: .3s;
 }
+
 header.scrolled {
     background-color: var(--bg-color-transparent);
-    box-shadow: 0 5px 20px .1px rgba(0, 0, 0, 0.1); /*shodow when we scrolling*/
+    box-shadow: 0 5px 20px .1px rgba(0, 0, 0, 0.1);
+    shodow when we scrolling
     -webkit-backdrop-filter: blur(15px);
-}
-nav.container{
+} */
+
+nav.container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
-header .logo{
+header #logo {
     height: 120px;
     line-height: 120px;
 }
-header.scrolled .logo{
+
+header.scrolled #logo {
     height: 80px;
     line-height: 80px;
 }
 
-.links{
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
+.links-off {
+    display: none;
 }
-.links ul{
+
+.links-on {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: antiquewhite;
+    font-size: 1.5rem;
+    padding-top: 10%;
+    z-index: 10;
+}
+
+#links ul {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
 }
@@ -117,7 +145,7 @@ header.scrolled .logo{
     transition: .3s;
 }
 
-.nav-link::after{
+.nav-link::after {
     content: "";
     position: absolute;
     width: 0;
@@ -131,18 +159,18 @@ header.scrolled .logo{
     transition: .3s;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: var(--heading-color);
 }
 
-.nav-link:hover::after{
+.nav-link:hover::after {
     width: 100%;
-    opacity: .2;    
+    opacity: .2;
 }
 
-.toggle-btn{
+.toggle-btn {
     color: var(-var(--heading-color));
-    min-width: 40px;
+    width: 40px;
     height: 40px;
     background-color: var(--bg-color-2);
     border-radius: 50%;
@@ -155,15 +183,179 @@ header.scrolled .logo{
     transition: .3s;
 }
 
-.toggle-btn:hover{
+.toggle-btn:hover {
     filter: brightness(97%);
 }
 
+.fa-bars,
+.fa-times {
+    font-size: 1.5rem;
+}
 
+/* Hero Section */
 
+#hero form {
+    margin: 13vh 2vh;
+}
 
+#hero form::before {
+    content: '<body>';
+    font-size: 1rem;
+    font-style: oblique;
+    margin-left: -2vh;
+    opacity: .4;
+}
 
+#hero form h1,
+#hero form h2 {
+    font-weight: 500;
+    margin-bottom: .8rem;
+    text-transform: capitalize;
+}
 
+#hero form .text::before {
+    content: '<h1>';
+    font-size: 1rem;
+    display: block;
+    font-style: oblique;
+    margin-left: -2vh;
+    margin-top: 1vh;
+    opacity: .4;
+}
 
+#hero form .text::after {
+    content: '</h1>';
+    display: block;
+    font-size: 1rem;
+    font-style: oblique;
+    margin-left: -2vh;
+    opacity: .4;
+}
 
+#hero form h2::before {
+    content: '<p>';
+    display: block;
+    font-size: 1rem;
+    font-style: oblique;
+    margin-left: -2vh;
+    margin-top: 1vh;
+    opacity: .4;
+}
 
+#hero form h2::after {
+    content: '</p>';
+    display: block;
+    font-size: 1rem;
+    font-style: oblique;
+    margin-left: -2vh;
+    opacity: .4;
+}
+
+#hero button {
+    font-variant: small-caps;
+    display: block;
+    width: 17vh;
+    height: 4vh;
+    margin-top: 1.8rem;
+    background-color: transparent;
+    border: 2px solid var(--main-color-1);
+    opacity: .5;
+}
+#hero button:hover{
+    background-color: var(--main-color-1);
+    border: 2px solid transparent;
+    opacity: .7;
+    color: #fff;
+    
+}
+
+#scroll-down {
+    width: 28%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero Section End */
+/* my Portfolio Section */
+main #myPortfolio{
+    height: 39vh;
+    margin-top: 30vh;
+    margin-bottom: 10vh; 
+    padding-top: 1px;
+    background-color: var(--bg-color-2);
+}
+main #myPortfolio form{
+    margin: 12px 0 7px;
+}
+main #myPortfolio form h2 {
+    font-weight: 500;
+    margin-bottom: .8rem;
+}
+main #myPortfolio form h2, main form P{
+    font-variant: small-caps;
+    margin-left: 2vh;
+}  
+main #myPortfolio form h2::before {
+    content: '<h2>';
+    display: block;
+    font-size: 1rem;
+    font-style: oblique;
+    margin-left: -2vh;
+    margin-top: 1vh;
+    opacity: .4;
+}
+
+main #myPortfolio form h2::after {
+    content: '</h2>';
+    display: block;
+    font-size: 1rem;
+    margin-left: -2vh;
+    font-style: oblique;
+    opacity: .4;
+}
+
+main #myPortfolio form p::before {
+    content: '<p>';
+    display: block;
+    margin-left: -2vh;    
+    font-size: 1rem;
+    font-style: oblique;
+    margin-top: 1vh;
+    opacity: .4;
+}
+
+main #myPortfolio form p::after {
+    content: '</p>';
+    display: block;
+    font-size: 1rem;
+    font-style: oblique;
+    margin-left: -2vh;
+    opacity: .4;
+}
+main #myPortfolio button {
+    font-variant: small-caps;
+    font-weight: 600;
+    display: block;
+    width: 15vh;
+    height: 3vh;
+    margin-top: 1.1rem;
+    background-color: transparent;
+    border: 2px solid var(--main-color-1);
+    opacity: .5;
+    float: right;
+}
+main #myPortfolio button:hover{
+    background-color: var(--main-color-1);
+    border: 2px solid transparent;
+    opacity: .7;
+    color: #fff;
+    
+}
+/* my Portfolio Section End*/
+/* About Me Section */
+
+main #aboutMe{
+    height: 40vh;
+}

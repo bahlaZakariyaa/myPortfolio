@@ -1,13 +1,18 @@
-const header = document.querySelector('header');
+(function () {
+    'use strict';
+    const openMenu = document.getElementById('open-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const links = document.getElementById('links');
 
-/* --------------------- Sticky NavBar --------------------- */
+    openMenu.addEventListener('click', event => {
+        event.preventDefault();
+        links.className = 'links-on';
+        openMenu.style.display = 'none';
 
-function stickyNavbar(event) {
-    /* 
-        when we scroll down the class will be add to the header, and when we are not scrolling 
-        the class scrolled will not be affected to the header
-    */
-    header.classList.toggle('scrolled', window.pageYOffset > 0);
-}
-
-window.addEventListener('scroll', stickyNavbar);
+        closeMenu.addEventListener('click', event => {
+            event.preventDefault();
+            links.className = 'links-off';
+            openMenu.style.display = 'inline-block';
+        });
+    });
+})();
