@@ -139,14 +139,15 @@ ul {
 /* ------------------- Container ------------------- */
 
 .container {
-    height: 350vh;
+    /* height: 350vh; */
     width: 80%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     /* grid-template-rows: .08fr .75fr .3fr .6fr .4fr .4fr .6fr .2fr;
     grid-template-areas: "nav" "hero" "portfolio" "aboutMe" "projects" "skills" "contactMe" "footer"; */
-    grid-template-rows: .08fr .75fr .3fr .6fr .4fr .6fr .1fr;
+    /* grid-template-rows: .08fr .75fr .3fr .6fr .4fr .6fr .1fr; */
+    grid-template-rows: repeat(7, auto);
     grid-template-areas: "nav" "hero" "portfolio" "aboutMe" "skills" "contactMe" "footer";
     grid-gap: .2rem;
     font-family: "Inter", sans-serif;
@@ -229,6 +230,7 @@ nav {
 /* ------------------- Hero Section CSS Code ------------------- */
 
 .hero {
+    height: 91vh;
     background-color: #1d1d1d;
     color: #f7f4ff;
     grid-area: hero;
@@ -356,6 +358,7 @@ nav {
 /* ------------------- My Portfolio Section CSS Code ------------------- */
 
 .portfolio {
+    height: 30vh;
     grid-area: portfolio;
     background-color: #1d1d1d;
     color: #f7f4ff;
@@ -478,6 +481,7 @@ nav {
 .aboutMe {
     background-color: #1d1d1d;
     color: #fff;
+    height: 60vh;
     grid-area: aboutMe;
     width: 100%;
     background-image: url('../images/background.jpg');
@@ -590,7 +594,7 @@ nav {
 .aboutMe .row:nth-child(2) {
     /* margin: 0 -1vw;
     padding: 2vh 0 0 0; */
-    margin: 0 -1vw;
+    margin: -6vh -1vw;
     padding: 2vh 0 0.7vh 0;
 }
 
@@ -633,6 +637,7 @@ nav {
 .skills {
     background-color: #1d1d1d;
     color: #fff;
+    height: 67vh;
     grid-area: skills;
     border-radius: var(--main-radius);
     padding: var(--main-padding);
@@ -641,7 +646,7 @@ nav {
 
 .skills .row:nth-child(1) {
     width: 100%;
-    padding: 2vh 5vw 0 5vw;
+    padding: 0 5vw 0 5vw;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -748,7 +753,7 @@ nav {
 }
 
 .skills .row:nth-child(2) {
-    margin: 0 -1vw;
+    margin: -3vh -1vw;
     padding: 2vh 0 0.7vh 0;
 }
 
@@ -1191,41 +1196,227 @@ footer p span {
         color: #019e86;
     } */
     /* ------------------- Container ------------------- */
-    
-    .socialNetwork, .mailAddress{
+    .socialNetwork,
+    .mailAddress {
         display: none;
     }
-
     .container {
         grid-template-rows: repeat(7, auto);
         grid-gap: .2rem;
     }
-
     /* ----------------  NavBar ---------------- */
     nav {
         padding: 0.3rem 1rem;
     }
-    
     .fixed {
         position: fixed;
         top: 0;
-        width: 90%;
         z-index: 20;
         background-color: #1d1d1de3;
         padding: 0.3rem 1rem;
     }
-
-    #links{
+    #links {
         display: none;
     }
-
-    #open-menu{
+    #open-menu {
         display: inline-block;
         font-size: 1.5rem;
         font-weight: 300;
         color: #019e86;
     }
+    /* ----------------  End of NavBar ---------------- */
+    /* ----------------  Hero Section ---------------- */
+    .hero {
+        height: 90vh;
+    }
+    #hero-form .text h1 {
+        font-size: 3rem;
+        line-height: 3.2rem;
+        letter-spacing: 2px;
+    }
+    #hero-form h2 {
+        font-size: .7rem;
+        line-height: 1.5rem;
+    }
+    #hero-form button {
+        width: 35vw;
+        height: 4vh;
+        margin-top: 2vh;
+        font-size: .6rem;
+    }
+    .scroll-down span {
+        writing-mode: vertical-lr;
+        font-size: .8rem;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        display: block;
+        margin: -5vh 2vw;
+        color: #019e86;
+    }
+    .scroll-down span:nth-child(2) {
+        margin: 6vh 2vw;
+        font-weight: 300;
+    }
+    /* ----------------  End of Hero Section ---------------- */
+    /* ------------------- My Portfolio Section CSS Code ------------------- */
+    .portfolio {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 50vh;
+    }
+    .portfolio .text h2 {
+        font-size: 3rem;
+    }
+    .portfolio .text p {
+        width: 100%;
+    }
+    .portfolio #portfolio-btn {
+        margin-top: 2vh;
+        width: 35vw;
+        height: 3vh;
+        line-height: 3vh;
+        font-size: .6rem;
+        align-self: flex-end;
+    }
+    /* ------------------- End of My Portfolio Section CSS Code ------------------- */
+    /* ------------------- About-Me Section CSS Code ------------------- */
+    .aboutMe {
+        height: 50vh;
+        background-position-x: left;
+        opacity: .9;
+    }
+    .aboutMe .row:nth-child(1) {
+        padding: 0 5vw 0 5vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "text text" "text text" "text text" "text text";
+    }
+    .aboutMe .row .text {
+        grid-area: text;
+    }
+    .aboutMe .row .text h2 {
+        font-size: 2rem;
+        line-height: 1.8rem;
+    }
+    .aboutMe .row .text p:first-of-type::before {
+        margin-bottom: -0.7rem;
+    }
+    .aboutMe .row .text p {
+        font-size: .75rem;
+    }
+    .aboutMe .row:nth-child(2) {
+        display: none;
+    }
+    /* ------------------- End of About-Me Section CSS Code ------------------- */
+    /* ------------------- Skills Section CSS Code ------------------- */
+    /* ---------------- left side ---------------- */
+    .skills {
+        height: 96vh;
+    }
+    .skills .row:nth-child(1) {
+        padding: 0 5vw 0 5vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "text" "text" "details" "details";
+    }
+    .skills .row .text h2 {
+        font-size: 2rem;
+        line-height: 1.8rem;
+    }
+    .skills .row .text p {
+        font-size: .75rem;
+        margin-bottom: .45rem;
+    }
+    .skills .row .text p span {
+        font-size: 1.5rem;
+        color: #019e86;
+    }
+    .skills .row .skill-details {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        margin-top: 2vh;
+        grid-area: details;
+    }
+    .skills .row:nth-child(2) {
+        margin: -25vh -1vw;
+    }
+    /* ---------------- right side : skill-details ---------------- */
+    .skills .row .skill-details h4 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .skills .row .skill-details .chart {
+        width: 90%;
+        margin: 0rem auto;
+    }
+    .skills .row .skill-details .chart span {
+        font-size: .7rem;
+    }
+    /* ------------------- End of Skills Section CSS Code ------------------- */
+    /* ------------------- Contact-Me Section CSS Code ------------------- */
+    .contactMe {
+        height: 101vh;
+    }
+    .contactMe .row:nth-child(1) {
+        padding: 0vh 5vw 0 5vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "text text" "text text" "img img";
+    }
+    .contactMe .row .contactSide h2 {
+        font-size: 2rem;
+        line-height: 1.8rem;
+    }
+    .contactMe .row .contactSide p {
+        width: 100%;
+        font-size: .8rem;
+    }
+    .contactMe .row .contactSide p span {
+        font-size: 1.5rem;
+        color: #019e86;
+    }
+    .contactMe .row .contactSide #formContact {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: .2fr .2fr .2fr .6fr .2fr;
+        grid-template-areas: "name" "email" "subject" "textarea" "submit";
+        grid-gap: .2rem;
+        font-size: .8rem;
+    }
     
-    /* ----------------  NavBar ---------------- */
+    .contactMe .row .contactSide #formContact button {
+        width: 30vw;
+        height: 2.8vh;
+    }
     
+    
+    .contactMe .row:nth-child(2) {
+        margin: 3vh -1vw;
+        
+    }
+
+    .contactMe .row .mapImage {
+        width: 100%;
+        height: auto;
+        margin-top: -8%;
+        background-image: none;
+        position: static;
+    }
+    .contactMe .row .mapImage .address {
+        width: 50%;
+        position: static;
+        float: right;
+        text-align: right;
+        
+    }
+    .contactMe .row .mapImage .address p {
+        margin-bottom: .3rem;
+        color: #019e86;
+    }
+    .contactMe .row .mapImage .address p span {
+        color: #8CC0DE;
+    }
+    /* ------------------- End of Contact-Me Section CSS Code ------------------- */
 }
