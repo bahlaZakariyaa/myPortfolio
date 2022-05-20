@@ -1170,31 +1170,9 @@ footer p span {
 
 /* ------------------- End of Contact-Me Section CSS Code ------------------- */
 
-@media screen and (max-width: 550px) {
-    /*     
-    #links{
-        display: none;
-        width: 100vw;
-        height: 100vh;
+/* --------------------------------------------------------- Media Querie --------------------------------------------------------- */
 
-        position: absolute;
-        top: 0;
-        
-    }
-    .vertical-display{
-        display: flex;
-        flex-direction: column;
-        
-        
-        background-color: #515152;
-        z-index: 10;
-    }
-    #open-menu{
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 300;
-        color: #019e86;
-    } */
+@media screen and (max-width: 550px) {
     /* ------------------- Container ------------------- */
     .socialNetwork,
     .mailAddress {
@@ -1207,6 +1185,13 @@ footer p span {
     /* ----------------  NavBar ---------------- */
     nav {
         padding: 0.3rem 1rem;
+        position: relative;
+    }
+    #open-menu {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #019e86;
     }
     .fixed {
         position: fixed;
@@ -1215,8 +1200,35 @@ footer p span {
         background-color: #1d1d1de3;
         padding: 0.3rem 1rem;
     }
+    nav .row {}
     #links {
         display: none;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #404040;
+        color: #f7f4ff;
+        opacity: .95;
+    }
+    #links ul {
+        padding: 12vh 2vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 2rem;
+        position: relative;
+    }
+    #links ul li:nth-of-type(1) {
+        color: #f7f4ff;
+        position: absolute;
+        top: 2vh;
+        right: 2vw;
+    }
+    #close-menu {
+        color: #f7f4ff;
     }
     #open-menu {
         display: inline-block;
@@ -1385,18 +1397,13 @@ footer p span {
         grid-gap: .2rem;
         font-size: .8rem;
     }
-    
     .contactMe .row .contactSide #formContact button {
         width: 30vw;
         height: 2.8vh;
     }
-    
-    
     .contactMe .row:nth-child(2) {
         margin: 3vh -1vw;
-        
     }
-
     .contactMe .row .mapImage {
         width: 100%;
         height: auto;
@@ -1409,7 +1416,6 @@ footer p span {
         position: static;
         float: right;
         text-align: right;
-        
     }
     .contactMe .row .mapImage .address p {
         margin-bottom: .3rem;
