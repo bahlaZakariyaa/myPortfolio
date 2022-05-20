@@ -1173,11 +1173,71 @@ footer p span {
 /* --------------------------------------------------------- Media Querie --------------------------------------------------------- */
 
 @media screen and (max-width: 550px) {
-    /* ------------------- Container ------------------- */
-    .socialNetwork,
-    .mailAddress {
-        display: none;
+    /* ------------------- Social Network Icons --------------------- */
+    .socialNetwork {
+        position: fixed;
+        left: 5%;
+        bottom: 2vh;
     }
+    .socialNetwork ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 20vh;
+        opacity: .5;
+    }
+    .socialNetwork::after {
+        content: '';
+        display: block;
+        width: 0.1rem;
+        height: 10vh;
+        background-color: #08fdd8;
+        opacity: .8;
+        position: relative;
+        top: 1vh;
+        left: 11%;
+        bottom: 0;
+    }
+    .socialNetwork ul li {
+        width: 3rem;
+    }
+    .socialNetwork ul li a i {
+        font-size: 1.2rem;
+        color: #08fdd8;
+        cursor: pointer;
+    }
+    .socialNetwork ul li a i:hover {
+        color: #f7f4ff;
+    }
+    .mailAddress {
+        position: fixed;
+        right: 4%;
+        bottom: 2vh;
+        opacity: .5;
+    }
+    .mailAddress::after {
+        content: '';
+        display: block;
+        width: 0.1rem;
+        height: 10vh;
+        background-color: #08fdd8;
+        opacity: .8;
+        position: relative;
+        top: 1vh;
+        left: 1.4vw;
+        bottom: 0;
+    }
+    .mailAddress span {
+        writing-mode: vertical-lr;
+        font-family: "Inter", sans-serif;
+        color: #fff;
+        font-size: .9rem;
+        font-weight: 300;
+        color: #08fdd8;
+        cursor: pointer;
+    }
+    /* ------------------- Container ------------------- */
     .container {
         grid-template-rows: repeat(7, auto);
         grid-gap: .2rem;
