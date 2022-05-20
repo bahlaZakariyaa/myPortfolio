@@ -1,0 +1,1231 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+/* ------------------- Website Theme ------------------- */
+
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+    --bg-hero-color: #1d1d1d;
+    --hue-1: 257;
+    --hue-2: 47;
+    --bg-color: rgb(244, 239, 255);
+    --main-color-2: rgb(254, 211, 56);
+    --main-color-dark-2: rgb(234, 193, 46);
+    --bg-color-2: #fff;
+    --bg-color-1: #f7f4ff;
+    --bg-color-transparent: rgba(255, 255, 255, 0.6);
+    --text-color: rgb(153, 144, 176);
+}
+
+/* ------------------- End of Website Theme ------------------- */
+
+/* ------------------- General Styles ------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    /* background-color: rgb(244, 239, 255); */
+    background-color: #1d1d1dd7;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    position: relative;
+}
+
+::selection {
+    background-color: rgb(153, 144, 176);
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ------------------- End of General Styles ------------------- */
+
+/* ------------------- Reusable CSS Code ------------------- */
+
+/* ------------------- End of Reusable CSS Code ------------------- */
+
+#header {
+    width: 100%;
+    height: .3vh;
+}
+
+.socialNetwork {
+    position: fixed;
+    left: 8%;
+    bottom: 2vh;
+}
+
+.socialNetwork ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20vh;
+    opacity: .5;
+}
+
+.socialNetwork::after {
+    content: '';
+    display: block;
+    width: 0.1rem;
+    height: 10vh;
+    background-color: #08fdd8;
+    opacity: .8;
+    position: relative;
+    top: 1vh;
+    left: 11%;
+    bottom: 0;
+}
+
+.socialNetwork ul li {
+    width: 3rem;
+}
+
+.socialNetwork ul li a i {
+    font-size: 1.2rem;
+    color: #08fdd8;
+    cursor: pointer;
+}
+
+.socialNetwork ul li a i:hover {
+    color: #f7f4ff;
+}
+
+.mailAddress {
+    position: fixed;
+    right: 8%;
+    bottom: 2vh;
+    opacity: .5;
+}
+
+.mailAddress::after {
+    content: '';
+    display: block;
+    width: 0.1rem;
+    height: 10vh;
+    background-color: #08fdd8;
+    opacity: .8;
+    position: relative;
+    top: 1vh;
+    left: 0.4vw;
+    bottom: 0;
+}
+
+.mailAddress span {
+    writing-mode: vertical-lr;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    color: #08fdd8;
+    cursor: pointer;
+}
+
+/* ------------------- Container ------------------- */
+
+.container {
+    height: 350vh;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: .08fr .75fr .3fr .6fr .4fr .4fr .6fr .2fr;
+    grid-template-areas: "nav" "hero" "portfolio" "aboutMe" "projects" "skills" "contactMe" "footer"; */
+    grid-template-rows: .08fr .75fr .3fr .6fr .4fr .6fr .1fr;
+    grid-template-areas: "nav" "hero" "portfolio" "aboutMe" "skills" "contactMe" "footer";
+    grid-gap: .2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* ------------------- Navbar CSS Code ------------------- */
+
+nav {
+    background-color: #1d1d1d;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding: 0.3rem 1.3rem 0;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 80%;
+    z-index: 20;
+    background-color: #1d1d1de3;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 1.5rem;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.5rem;
+    color: #eee;
+    letter-spacing: 1px;
+    transition: .3s;
+    opacity: .7;
+}
+
+#logo span {
+    color: #10dbbd;
+}
+
+#logo span:nth-of-type(1) {
+    display: inline-block;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: #515152;
+    letter-spacing: 1px;
+    margin: 0 1rem 0 -.5rem;
+    padding-top: 3px;
+    vertical-align: sub;
+}
+
+#close-menu,
+#open-menu {
+    display: none;
+}
+
+#links ul li {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 0 0 0 10px;
+}
+
+#links .nav-link {
+    color: #eee;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+#links .nav-link:hover {
+    color: #10dbbd;
+}
+
+/* ------------------- End of Navbar CSS Code ------------------- */
+
+/* ------------------- Hero Section CSS Code ------------------- */
+
+.hero {
+    background-color: #1d1d1d;
+    color: #f7f4ff;
+    grid-area: hero;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+.hero .row:nth-child(1) {
+    padding: 0 5vw;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#hero-form::before {
+    display: block;
+    content: "<body>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -2vw;
+    text-transform: lowercase;
+}
+
+#hero-form .text::before {
+    content: "<h1>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+#hero-form .text h1 {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 5.2rem;
+    letter-spacing: 3px;
+}
+
+#hero-form .text::after {
+    content: "</h1>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+#hero-form h2::before {
+    display: block;
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+#hero-form h2 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-variant: small-caps;
+    line-height: 2rem;
+    letter-spacing: 3px;
+}
+
+#hero-form h2::after {
+    display: block;
+    content: "</p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+#hero-form button {
+    background-color: #1d1d1d;
+    border: 1px solid #019e86;
+    color: #08fdd8;
+    width: 15vw;
+    height: 5vh;
+    font-weight: 400;
+    font-variant: small-caps;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#hero-form button:hover {
+    background-color: #08fdd8;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+}
+
+.hero .row:nth-child(2) {
+    margin: 0 -1vw;
+}
+
+.scroll-down span {
+    writing-mode: vertical-lr;
+    font-size: .8rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    display: block;
+    margin: -5vh 2vw;
+    color: #019e86;
+}
+
+.scroll-down span:nth-child(2) {
+    margin: 6vh 2vw;
+    font-weight: 300;
+}
+
+/* ------------------- End of Hero Section CSS Code ------------------- */
+
+/* ------------------- My Portfolio Section CSS Code ------------------- */
+
+.portfolio {
+    grid-area: portfolio;
+    background-color: #1d1d1d;
+    color: #f7f4ff;
+    border-radius: var(--main-radius);
+    padding: 2vh 5vw 2vh 5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio .text h2::before {
+    display: block;
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.portfolio .text h2 {
+    font-family: 'Euphoria Script', cursive;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    letter-spacing: 3px;
+    color: #019e86;
+}
+
+.portfolio .text h2::after {
+    display: block;
+    content: "</p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.portfolio .text p::before {
+    display: block;
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.portfolio .text p {
+    /* font-family: "Open Sans",sans-serif; */
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    font-variant: small-caps;
+    width: 90%;
+}
+
+.portfolio .text p::after {
+    display: block;
+    content: "</p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.portfolio .text p a {
+    color: #019e86;
+}
+
+.portfolio .text p a:hover {
+    color: #019e86b3;
+}
+
+.portfolio .text::after {
+    display: block;
+    content: "</section>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -2vw;
+    text-transform: lowercase;
+}
+
+.portfolio #portfolio-btn {
+    background-color: #1d1d1d;
+    border: 1px solid #019e86;
+    color: #08fdd8;
+    text-align: center;
+    margin-top: 16vh;
+    width: 15vw;
+    height: 5vh;
+    line-height: 4.4vh;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: .8rem;
+    letter-spacing: 4px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.portfolio #portfolio-btn:hover {
+    background-color: #08fdd8;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+}
+
+/* ------------------- End of My Portfolio Section CSS Code ------------------- */
+
+/* ------------------- About-Me Section CSS Code ------------------- */
+
+.aboutMe {
+    background-color: #1d1d1d;
+    color: #fff;
+    grid-area: aboutMe;
+    width: 100%;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .9;
+    z-index: -1;
+}
+
+.aboutMe .row:nth-child(1) {
+    width: 100%;
+    /* height: 80%; */
+    padding: 2vh 5vw 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "text text img img" "text text img img" "text text img img" "text text img img";
+}
+
+.aboutMe .row .text::before {
+    display: block;
+    content: "<section>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -2vw;
+    margin-top: 1rem;
+    text-transform: lowercase;
+}
+
+.aboutMe .row .text {
+    grid-area: text;
+}
+
+.aboutMe .row .text h2::before {
+    display: block;
+    content: "<h2>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.aboutMe .row .text h2 {
+    font-family: 'Euphoria Script', cursive;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    letter-spacing: 3px;
+    color: #019e86;
+}
+
+.aboutMe .row .text h2::after {
+    display: block;
+    content: "</h2>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.aboutMe .row .text p:first-of-type::before {
+    display: block;
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.aboutMe .row .text p {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    font-variant: small-caps;
+    margin-bottom: .5rem;
+}
+
+.aboutMe .row .text p span {
+    font-size: 1.5rem;
+    color: #019e86;
+}
+
+.aboutMe .row .text p:last-of-type::after {
+    display: block;
+    content: "</p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.aboutMe .row .my-img {
+    width: 100%;
+    height: 80%;
+    border-radius: 50%;
+    grid-area: img;
+}
+
+.aboutMe .row:nth-child(2) {
+    /* margin: 0 -1vw;
+    padding: 2vh 0 0 0; */
+    margin: 0 -1vw;
+    padding: 2vh 0 0.7vh 0;
+}
+
+.aboutMe .row:nth-child(2) a {
+    cursor: pointer;
+}
+
+.aboutMe .row:nth-child(2) .scroll-down span {
+    writing-mode: vertical-lr;
+    font-size: .8rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    display: block;
+    margin: -5vh 2.3vw;
+    color: #019e86;
+}
+
+.aboutMe .row:nth-child(2) .scroll-down span:nth-child(2) {
+    margin: 6vh 2.3vw 0 2.3vw;
+    font-weight: 300;
+}
+
+/* ------------------- End of About-Me Section CSS Code ------------------- */
+
+/* ------------------- Projects Section CSS Code ------------------- */
+
+/* .projects {
+    background-color: #E6BA95;
+    grid-area: projects;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+} */
+
+/* ------------------- End of Projects Section CSS Code ------------------- */
+
+/* ------------------- Skills Section CSS Code ------------------- */
+
+/* ---------------- left side ---------------- */
+
+.skills {
+    background-color: #1d1d1d;
+    color: #fff;
+    grid-area: skills;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    width: 100%;
+}
+
+.skills .row:nth-child(1) {
+    width: 100%;
+    padding: 2vh 5vw 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "text text details details" "text text details details" "text text details details" "text text details details";
+}
+
+.skills .row .text::before {
+    display: block;
+    content: "<section>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -2vw;
+    margin-top: 1rem;
+    text-transform: lowercase;
+}
+
+.skills .row .text {
+    grid-area: text;
+}
+
+.skills .row .text h2::before {
+    display: block;
+    content: "<h2>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.skills .row .text h2 {
+    font-family: 'Euphoria Script', cursive;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    letter-spacing: 3px;
+    color: #019e86;
+}
+
+.skills .row .text h2::after {
+    display: block;
+    content: "</h2>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.skills .row .text p:first-of-type::before {
+    display: block;
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.skills .row .text p {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    font-variant: small-caps;
+    margin-bottom: .5rem;
+}
+
+.skills .row .text p span {
+    font-size: 1.5rem;
+    color: #019e86;
+}
+
+.skills .row .text p a {
+    color: #10dbbd;
+}
+
+.skills .row .text p a:hover {
+    color: #10dbbdbd;
+    font-weight: 600;
+}
+
+.skills .row .text p:last-of-type::after {
+    display: block;
+    content: "</p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.skills .row .skill-details {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    grid-area: details;
+}
+
+.skills .row:nth-child(2) {
+    margin: 0 -1vw;
+    padding: 2vh 0 0.7vh 0;
+}
+
+.skills .row:nth-child(2) a {
+    cursor: pointer;
+}
+
+.skills .row:nth-child(2) .scroll-down span {
+    writing-mode: vertical-lr;
+    font-size: .8rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    display: block;
+    margin: -5vh 2.3vw;
+    color: #019e86;
+}
+
+.skills .row:nth-child(2) .scroll-down span:nth-child(2) {
+    margin: 6vh 2.3vw 0 2.3vw;
+    font-weight: 300;
+}
+
+/* ---------------- right side : skill-details ---------------- */
+
+.skills .row .skill-details h4 {
+    font-family: 'Euphoria Script', cursive;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3.5rem;
+    letter-spacing: 3px;
+    color: #019e86;
+}
+
+.skills .row .skill-details .chart {
+    margin-bottom: 1rem;
+}
+
+.skills .row .skill-details .chart span {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    font-variant: small-caps;
+}
+
+.skills .row .skill-details .chart footer {
+    margin-top: .5rem;
+    height: .2rem;
+    background-color: #515152;
+    position: relative;
+}
+
+.skills .row .skill-details .chart:nth-of-type(1) footer div {
+    width: 95%;
+    height: .2rem;
+    background-color: #6A67CE;
+    position: absolute;
+    left: 0;
+}
+
+.skills .row .skill-details .chart:nth-of-type(2) footer div {
+    width: 75%;
+    height: .2rem;
+    background-color: #B689C0;
+    position: absolute;
+    left: 0;
+}
+
+.skills .row .skill-details .chart:nth-of-type(3) footer div {
+    width: 50%;
+    height: .2rem;
+    background-color: #EEF3D2;
+    position: absolute;
+    left: 0;
+}
+
+.skills .row .skill-details .chart:nth-of-type(4) footer div {
+    width: 75%;
+    height: .2rem;
+    background-color: #F4BFBF;
+    position: absolute;
+    left: 0;
+}
+
+.skills .row .skill-details .chart:nth-of-type(5) footer div {
+    width: 75%;
+    height: .2rem;
+    background-color: #FAF0D7;
+    position: absolute;
+    left: 0;
+}
+
+.skills .row .skill-details .chart:nth-of-type(6) footer div {
+    width: 75%;
+    height: .2rem;
+    background-color: #8CC0DE;
+    position: absolute;
+    left: 0;
+}
+
+/* ------------------- End of Skills Section CSS Code ------------------- */
+
+/* ------------------- Contact-Me Section CSS Code ------------------- */
+
+.contactMe {
+    background-color: #1d1d1d;
+    color: #fff;
+    grid-area: contactMe;
+    width: 100%;
+    border-radius: var(--main-radius);
+}
+
+.contactMe .row:nth-child(1) {
+    width: 100%;
+    /* height: 65vh; */
+    padding: 2vh 5vw 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "text text img img" "text text img img" "text text img img" "text text img img";
+}
+
+.contactMe .row .contactSide::before {
+    display: block;
+    content: "<section>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -2vw;
+    margin-top: 1rem;
+    text-transform: lowercase;
+}
+
+.contactMe .row .contactSide {
+    grid-area: text;
+}
+
+.contactMe .row .contactSide h2::before {
+    display: block;
+    content: "<h2>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.contactMe .row .contactSide h2 {
+    font-family: 'Euphoria Script', cursive;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    letter-spacing: 3px;
+    color: #019e86;
+}
+
+.contactMe .row .contactSide h2::after {
+    display: block;
+    content: "</h2>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.contactMe .row .contactSide p:first-of-type::before {
+    display: block;
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+    line-height: 1rem;
+}
+
+.contactMe .row .contactSide p {
+    width: 80%;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    font-variant: small-caps;
+    margin-bottom: .5rem;
+}
+
+.contactMe .row .contactSide p span {
+    font-size: 1.5rem;
+    color: #019e86;
+}
+
+.contactMe .row .contactSide p:last-of-type::after {
+    display: block;
+    content: "</p>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.contactMe .row .contactSide div::before {
+    display: block;
+    content: "<form>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.contactMe .row .contactSide #formContact {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: .2fr .2fr .6fr .2fr;
+    grid-template-areas: "name email" "subject subject" "textarea textarea" "... submit";
+    grid-gap: .4rem;
+}
+
+.contactMe .row .contactSide #formContact input:nth-child(1) {
+    grid-area: name;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--main-radius);
+    background-color: #515152;
+    opacity: .8;
+}
+
+.contactMe .row .contactSide #formContact input:nth-child(2) {
+    grid-area: email;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--main-radius);
+    background-color: #515152;
+    opacity: .8;
+}
+
+.contactMe .row .contactSide #formContact input:nth-child(3) {
+    grid-area: subject;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--main-radius);
+    background-color: #515152;
+    opacity: .8;
+}
+
+.contactMe .row .contactSide #formContact textarea {
+    grid-area: textarea;
+    padding: 1rem 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--main-radius);
+    background-color: #515152;
+    opacity: .8;
+    color: #8a8a8a;
+}
+
+.contactMe .row .contactSide #formContact button {
+    grid-area: submit;
+    background-color: #1d1d1d;
+    border: 1px solid #019e86;
+    color: #08fdd8;
+    width: 14vw;
+    height: 3.5vh;
+    font-weight: 400;
+    font-variant: small-caps;
+    font-size: 0.7rem;
+    margin-top: .8rem;
+    letter-spacing: 4px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.contactMe .row .contactSide #formContact button:hover {
+    background-color: #08fdd8;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+}
+
+.contactMe .row .contactSide div::after {
+    display: block;
+    content: "</form>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.contactMe .row .contactSide::after {
+    display: block;
+    content: "</section>";
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #515152;
+    margin-left: -1vw;
+    text-transform: lowercase;
+}
+
+.contactMe .row:nth-child(2) {
+    margin: 0 -1vw;
+    padding: 2vh 0 0.7vh 0;
+}
+
+.contactMe .row:nth-child(2) a {
+    cursor: pointer;
+}
+
+.contactMe .row:nth-child(2) .scroll-up span {
+    writing-mode: vertical-lr;
+    font-size: .8rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    display: block;
+    margin: -5vh 2.3vw;
+    color: #019e86;
+}
+
+.contactMe .row:nth-child(2) .scroll-up span:nth-child(2) {
+    margin: 6vh 2.3vw 0 2.3vw;
+    font-weight: 300;
+}
+
+.contactMe .row .mapImage {
+    width: 99%;
+    height: 80%;
+    margin-top: 20%;
+    margin: 0 auto;
+    grid-area: img;
+    background-image: url(../images/map.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    border-radius: .5rem;
+    position: relative;
+}
+
+.contactMe .row .mapImage .address {
+    width: 40%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: .8rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.contactMe .row .mapImage .address p {
+    margin-bottom: .3rem;
+    color: rgba(140, 192, 222, 0.514);
+}
+
+.contactMe .row .mapImage .address p span {
+    color: #8CC0DE;
+}
+
+/* ------------------- End of Contact-Me Section CSS Code ------------------- */
+
+/* ------------------- Footer CSS Code ------------------- */
+
+footer {
+    background-color: #1d1d1d;
+    grid-area: footer;
+    color: #fff;
+    border-radius: var(--main-radius);
+    /* padding: var(--main-padding); */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 5.2vh;
+}
+
+/* footer .socialNetwork ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer .socialNetwork ul li{
+    width: 3rem;
+}
+
+footer .socialNetwork ul li a i{
+    font-size: 1.2rem;
+    color: #f7f4ff;
+}
+
+footer .socialNetwork ul li a i:hover{
+    color: #08fdd8;
+} */
+
+footer p {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 300;
+    font-variant: small-caps;
+    margin: 1.2rem 0 .6rem 0;
+}
+
+footer p span {
+    color: #08fdd8;
+}
+
+/* ------------------- End of Contact-Me Section CSS Code ------------------- */
+
+@media screen and (max-width: 550px) {
+    /*     
+    #links{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+
+        position: absolute;
+        top: 0;
+        
+    }
+    .vertical-display{
+        display: flex;
+        flex-direction: column;
+        
+        
+        background-color: #515152;
+        z-index: 10;
+    }
+    #open-menu{
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #019e86;
+    } */
+    /* ------------------- Container ------------------- */
+    
+    .socialNetwork, .mailAddress{
+        display: none;
+    }
+
+    .container {
+        grid-template-rows: repeat(7, auto);
+        grid-gap: .2rem;
+    }
+
+    /* ----------------  NavBar ---------------- */
+    nav {
+        padding: 0.3rem 1rem;
+    }
+    
+    .fixed {
+        position: fixed;
+        top: 0;
+        width: 90%;
+        z-index: 20;
+        background-color: #1d1d1de3;
+        padding: 0.3rem 1rem;
+    }
+
+    #links{
+        display: none;
+    }
+
+    #open-menu{
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #019e86;
+    }
+    
+    /* ----------------  NavBar ---------------- */
+    
+}
