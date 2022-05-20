@@ -225,6 +225,30 @@ nav {
     color: #10dbbd;
 }
 
+#links ul li:nth-of-type(7) {
+    background-color: #1d1d1d;
+    border: 1px solid #019e86;
+    border-radius: .3rem;
+    color: #08fdd8;
+    width: 8vw;
+    height: 3vh;
+    font-weight: 400;
+    font-variant: small-caps;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    line-height: 2.2vh;
+    padding-left: 0;
+    margin-left: 2rem;
+}
+
+#links ul li:nth-of-type(7):hover {
+    background-color: #08fdd86b;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+}
+
 /* ------------------- End of Navbar CSS Code ------------------- */
 
 /* ------------------- Hero Section CSS Code ------------------- */
@@ -1295,6 +1319,28 @@ footer p span {
         font-size: 1.5rem;
         font-weight: 300;
         color: #019e86;
+    }
+    #links ul li:nth-of-type(7) {
+        background-color: #1d1d1d;
+        border: 1px solid #019e86;
+        border-radius: 0.3rem;
+        color: #08fdd8;
+        width: 40vw;
+        height: 5vh;
+        font-weight: 400;
+        font-variant: small-caps;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        line-height: 4.2vh;
+        padding-left: 0;
+        margin: 4rem 0 0 1rem;
+    }
+    #links ul li:nth-of-type(7):hover {
+        background-color: #08fdd86b;
+        border: 1px solid #1d1d1d;
+        color: #1d1d1d;
     }
     /* ----------------  End of NavBar ---------------- */
     /* ----------------  Hero Section ---------------- */
