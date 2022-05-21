@@ -113,7 +113,7 @@ ul {
     opacity: .5;
 }
 
-.mailAddress span{
+.mailAddress span {
     margin-bottom: 2vh;
 }
 
@@ -225,10 +225,11 @@ nav {
     font-size: .9rem;
 }
 
-.active{
+.active {
     color: #02a58d !important;
 }
-.nav-link a::after{
+
+.nav-link a::after {
     content: '';
     width: 2rem;
     height: .2rem;
@@ -258,11 +259,12 @@ nav {
     padding-left: 0;
     margin-left: 2rem;
 }
-#links ul li:nth-of-type(7) a{
+
+#links ul li:nth-of-type(7) a {
     color: #08fdd8;
 }
 
-#links ul li:nth-of-type(7):hover{
+#links ul li:nth-of-type(7):hover {
     background-color: #08fdd86b;
     border: 1px solid #1d1d1d;
     color: #1d1d1d;
@@ -1301,7 +1303,7 @@ footer p span {
     }
     /* ----------------  NavBar ---------------- */
     nav {
-        height: 7vh;
+        height: 10vh;
         padding: 0.3rem 1rem;
         position: relative;
     }
@@ -1318,7 +1320,6 @@ footer p span {
         background-color: #1d1d1de3;
         padding: 0.3rem 1rem;
     }
-    
     #links {
         display: none;
         width: 100%;
@@ -1379,7 +1380,7 @@ footer p span {
     /* ----------------  End of NavBar ---------------- */
     /* ----------------  Hero Section ---------------- */
     .hero {
-        height: 92.1vh;
+        height: 89vh;
     }
     #hero-form .text h1 {
         font-size: 3rem;
@@ -1415,7 +1416,7 @@ footer p span {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        height: 50vh;
+        height: 64vh;
     }
     .portfolio .text h2 {
         font-size: 3rem;
@@ -1426,15 +1427,15 @@ footer p span {
     .portfolio #portfolio-btn {
         margin-top: 2vh;
         width: 35vw;
-        height: 3vh;
-        line-height: 3vh;
+        height: 4vh;
+        line-height: 3.7vh;
         font-size: .6rem;
         align-self: flex-end;
     }
     /* ------------------- End of My Portfolio Section CSS Code ------------------- */
     /* ------------------- About-Me Section CSS Code ------------------- */
     .aboutMe {
-        height: 50vh;
+        height: 70vh;
         background-position-x: left;
         opacity: .9;
     }
@@ -1464,7 +1465,7 @@ footer p span {
     /* ------------------- Skills Section CSS Code ------------------- */
     /* ---------------- left side ---------------- */
     .skills {
-        height: 92vh;
+        height: 140vh;
     }
     .skills .row:nth-child(1) {
         padding: 0 5vw 0 5vw;
@@ -1492,7 +1493,7 @@ footer p span {
         grid-area: details;
     }
     .skills .row:nth-child(2) {
-        margin: -25vh -1vw;
+        margin: -42vh -1vw;
     }
     /* ---------------- right side : skill-details ---------------- */
     .skills .row .skill-details h4 {
@@ -1509,7 +1510,7 @@ footer p span {
     /* ------------------- End of Skills Section CSS Code ------------------- */
     /* ------------------- Contact-Me Section CSS Code ------------------- */
     .contactMe {
-        height: 92vh;
+        height: 125vh;
     }
     .contactMe .row:nth-child(1) {
         padding: 0vh 5vw 0 5vw;
@@ -1538,8 +1539,8 @@ footer p span {
         font-size: .8rem;
     }
     .contactMe .row .contactSide #formContact button {
-        width: 30vw;
-        height: 2.8vh;
+        width: 40vw;
+        height: 3.8vh;
     }
     .contactMe .row:nth-child(2) {
         margin: 3vh -1vw;
@@ -1552,7 +1553,7 @@ footer p span {
         position: static;
     }
     .contactMe .row .mapImage .address {
-        width: 59%;
+        width: 66%;
         position: static;
         float: right;
         text-align: right;
