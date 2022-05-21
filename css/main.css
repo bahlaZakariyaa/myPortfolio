@@ -113,6 +113,10 @@ ul {
     opacity: .5;
 }
 
+.mailAddress span{
+    margin-bottom: 2vh;
+}
+
 .mailAddress::after {
     content: '';
     display: block;
@@ -221,6 +225,18 @@ nav {
     font-size: .9rem;
 }
 
+.active{
+    color: #02a58d !important;
+}
+.nav-link a::after{
+    content: '';
+    width: 2rem;
+    height: .2rem;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
 #links .nav-link:hover {
     color: #10dbbd;
 }
@@ -242,8 +258,11 @@ nav {
     padding-left: 0;
     margin-left: 2rem;
 }
+#links ul li:nth-of-type(7) a{
+    color: #08fdd8;
+}
 
-#links ul li:nth-of-type(7):hover {
+#links ul li:nth-of-type(7):hover{
     background-color: #08fdd86b;
     border: 1px solid #1d1d1d;
     color: #1d1d1d;
@@ -382,7 +401,7 @@ nav {
 /* ------------------- My Portfolio Section CSS Code ------------------- */
 
 .portfolio {
-    height: 30vh;
+    height: 37vh;
     grid-area: portfolio;
     background-color: #1d1d1d;
     color: #f7f4ff;
@@ -505,7 +524,7 @@ nav {
 .aboutMe {
     background-color: #1d1d1d;
     color: #fff;
-    height: 60vh;
+    height: 66vh;
     grid-area: aboutMe;
     width: 100%;
     background-image: url('../images/background.jpg');
@@ -661,7 +680,7 @@ nav {
 .skills {
     background-color: #1d1d1d;
     color: #fff;
-    height: 67vh;
+    height: 73vh;
     grid-area: skills;
     border-radius: var(--main-radius);
     padding: var(--main-padding);
@@ -887,6 +906,7 @@ nav {
     color: #fff;
     grid-area: contactMe;
     width: 100%;
+    height: 102vh;
     border-radius: var(--main-radius);
 }
 
@@ -1192,6 +1212,19 @@ footer p span {
     color: #08fdd8;
 }
 
+/* footer p span:hover::before{
+    content: 'zakariyaa.bahla@gmail.com';
+    width: auto;
+    height: auto;
+    background-color: #515152;
+    font-size: .8rem;
+    color: #08fdd8;
+    opacity: .5;
+
+    bottom: 10vh;
+    right: 50vw;
+} */
+
 /* ------------------- End of Contact-Me Section CSS Code ------------------- */
 
 /* --------------------------------------------------------- Media Querie --------------------------------------------------------- */
@@ -1268,6 +1301,7 @@ footer p span {
     }
     /* ----------------  NavBar ---------------- */
     nav {
+        height: 7vh;
         padding: 0.3rem 1rem;
         position: relative;
     }
@@ -1284,7 +1318,7 @@ footer p span {
         background-color: #1d1d1de3;
         padding: 0.3rem 1rem;
     }
-    nav .row {}
+    
     #links {
         display: none;
         width: 100%;
@@ -1345,7 +1379,7 @@ footer p span {
     /* ----------------  End of NavBar ---------------- */
     /* ----------------  Hero Section ---------------- */
     .hero {
-        height: 90vh;
+        height: 92.1vh;
     }
     #hero-form .text h1 {
         font-size: 3rem;
@@ -1430,7 +1464,7 @@ footer p span {
     /* ------------------- Skills Section CSS Code ------------------- */
     /* ---------------- left side ---------------- */
     .skills {
-        height: 96vh;
+        height: 92vh;
     }
     .skills .row:nth-child(1) {
         padding: 0 5vw 0 5vw;
@@ -1475,7 +1509,7 @@ footer p span {
     /* ------------------- End of Skills Section CSS Code ------------------- */
     /* ------------------- Contact-Me Section CSS Code ------------------- */
     .contactMe {
-        height: 101vh;
+        height: 92vh;
     }
     .contactMe .row:nth-child(1) {
         padding: 0vh 5vw 0 5vw;
@@ -1518,7 +1552,7 @@ footer p span {
         position: static;
     }
     .contactMe .row .mapImage .address {
-        width: 50%;
+        width: 59%;
         position: static;
         float: right;
         text-align: right;
